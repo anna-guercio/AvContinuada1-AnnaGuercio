@@ -41,4 +41,20 @@ public class Bebida extends Pedido{
                 ", custo final=" + calcularCusto() +
                 '}'; // super ToString ?
     }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getTamanho() {
+        return tamanho;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
 }

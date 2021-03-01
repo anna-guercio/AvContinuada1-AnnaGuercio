@@ -27,4 +27,20 @@ public abstract class Pedido {
                 ", cliente='" + cliente + '\'' +
                 '}';
     }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
 }

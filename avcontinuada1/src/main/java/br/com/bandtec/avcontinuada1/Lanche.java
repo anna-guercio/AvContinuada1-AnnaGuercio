@@ -33,4 +33,16 @@ public class Lanche extends Pedido{
                 ", custo final=" + calcularCusto() +
                 '}';
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
 }
