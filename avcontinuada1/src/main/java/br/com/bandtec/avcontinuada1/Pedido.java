@@ -1,7 +1,8 @@
 package br.com.bandtec.avcontinuada1;
 
-public abstract class Pedido {
+public abstract class Pedido implements Tributavel{
 
+    // Justificativa:
     // Utilizei classe abstrata porque queria que meu projeto tivesse uma relação de herança
 
     // Atributos
@@ -17,7 +18,7 @@ public abstract class Pedido {
     // Métodos
 
     // Método abstrato
-    public abstract Double calcularCusto();
+    public abstract Double calcularPreco();
 
     // Método toString()
     @Override
@@ -28,19 +29,12 @@ public abstract class Pedido {
                 '}';
     }
 
+    // Get
     public Integer getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
     public String getCliente() {
         return cliente;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
     }
 }

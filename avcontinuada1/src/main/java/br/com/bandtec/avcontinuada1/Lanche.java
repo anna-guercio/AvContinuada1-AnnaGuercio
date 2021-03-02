@@ -5,22 +5,30 @@ public class Lanche extends Pedido{
     // Atributos
     private String nome; // nome do lanche ex: BigMac, McChicken...
     private Integer quantidade;
-    private Double preco;
+    private Double valor;
 
     // Construtor
-    public Lanche(Integer numero, String cliente, String nome, Integer quantidade, Double preco) {
+    public Lanche(Integer numero, String cliente, String nome, Integer quantidade, Double valor) {
         super(numero, cliente);
         this.nome = nome;
         this.quantidade = quantidade;
-        this.preco = preco;
+        this.valor = valor;
     }
+
 
     // Métodos
 
-    // Método abstrato
+    // Método abstrato da classe abstrata Pedido
     @Override
-    public Double calcularCusto() {
-        return preco*quantidade;
+    public Double calcularPreco() {
+        return valor*quantidade;
+    }
+
+    // Método abstrato da interface Tributavel
+    // O valor do tributo cobrado do lanche é de 10%
+    @Override
+    public Double getValorTributo() {
+        return calcularPreco() * 0.10;
     }
 
     // Método toString()
@@ -29,11 +37,12 @@ public class Lanche extends Pedido{
         return "Lanche{" +
                 "nome='" + nome + '\'' +
                 ", quantidade=" + quantidade +
-                ", preco=" + preco +
-                ", custo final=" + calcularCusto() +
+                ", preço=" + calcularPreco() +
+                ", tributo="+getValorTributo()+
                 '}';
     }
 
+    // Get
     public String getNome() {
         return nome;
     }
@@ -42,7 +51,7 @@ public class Lanche extends Pedido{
         return quantidade;
     }
 
-    public Double getPreco() {
-        return preco;
+    public Double getValor() {
+        return valor;
     }
 }

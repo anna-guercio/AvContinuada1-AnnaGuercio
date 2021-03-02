@@ -6,28 +6,37 @@ public class Bebida extends Pedido{
     private String tipo; // o tipo pode ser refrigerante, suco, água...
     private String tamanho; // tamanho pequeno, médio ou grande
     private Integer quantidade;
-    private Double preco;
+    private Double valor;
 
     // Construtor
-    public Bebida(Integer numero, String cliente, String tipo, String tamanho, Integer quantidade, Double preco) {
+    public Bebida(Integer numero, String cliente, String tipo, String tamanho, Integer quantidade, Double valor) {
         super(numero, cliente);
         this.tipo = tipo;
         this.tamanho = tamanho;
         this.quantidade = quantidade;
-        this.preco = preco;
+        this.valor = valor;
     }
+
 
     // Métodos
 
-    // Método abstrato
+    // Método abstrato da classe abstrata Pedido
     @Override
-    public Double calcularCusto() {
-        // Se a quantidade de bebidas for maior ou igual a 3, aplicar um desconto de 10%
+    public Double calcularPreco() {
+        // Se a quantidade de bebidas for maior ou igual a 3, aplicar um desconto de 15%
+        Double custo = valor*quantidade;
         if (quantidade >= 3){
-            return (preco*quantidade)-(preco*quantidade*0.10);
+            return (custo)-(custo*0.15);
         } else {
-            return preco*quantidade;
+            return custo;
         }
+    }
+
+    // Método abstrato da interface Tributavel
+    // O valor do tributo cobrado da bebida é de 5%
+    @Override
+    public Double getValorTributo() {
+        return calcularPreco() * 0.05;
     }
 
     // Método toString()
@@ -37,10 +46,12 @@ public class Bebida extends Pedido{
                 "tipo='" + tipo + '\'' +
                 ", tamanho='" + tamanho + '\'' +
                 ", quantidade=" + quantidade +
-                ", preco=" + preco +
-                ", custo final=" + calcularCusto() +
-                '}'; // super ToString ?
+                ", preço=" + calcularPreco() +
+                ", tributo="+getValorTributo()+
+                '}';
     }
+
+    // Método Get
 
     public String getTipo() {
         return tipo;
@@ -54,7 +65,7 @@ public class Bebida extends Pedido{
         return quantidade;
     }
 
-    public Double getPreco() {
-        return preco;
+    public Double getValor() {
+        return valor;
     }
 }
