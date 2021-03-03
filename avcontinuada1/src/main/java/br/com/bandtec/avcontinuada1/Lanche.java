@@ -1,6 +1,6 @@
 package br.com.bandtec.avcontinuada1;
 
-public class Lanche extends Pedido{
+public class Lanche extends Pedido {
 
     // Atributos
     private String nome; // nome do lanche ex: BigMac, McChicken...
@@ -21,7 +21,7 @@ public class Lanche extends Pedido{
     // Método abstrato da classe abstrata Pedido
     @Override
     public Double calcularPreco() {
-        return valor*quantidade;
+        return valor * quantidade;
     }
 
     // Método abstrato da interface Tributavel
@@ -38,7 +38,7 @@ public class Lanche extends Pedido{
                 "nome='" + nome + '\'' +
                 ", quantidade=" + quantidade +
                 ", preço=" + calcularPreco() +
-                ", tributo="+getValorTributo()+
+                ", tributo=" + getValorTributo() +
                 '}';
     }
 

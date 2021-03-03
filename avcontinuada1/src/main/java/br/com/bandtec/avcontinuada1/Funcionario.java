@@ -1,6 +1,6 @@
 package br.com.bandtec.avcontinuada1;
 
-public class Funcionario implements Tributavel{
+public class Funcionario implements Tributavel {
 
     // Atributos
     private String nome;
@@ -22,7 +22,7 @@ public class Funcionario implements Tributavel{
     // O valor do tributo é de 20% do valor do salario
     @Override
     public Double getValorTributo() {
-        return salario*0.20;
+        return salario * 0.20;
     }
 
     // Método toString()
@@ -33,7 +33,7 @@ public class Funcionario implements Tributavel{
                 ", idFunc=" + idFunc +
                 ", cpf='" + cpf + '\'' +
                 ", salario=" + salario +
-                ", tributo="+getValorTributo()+
+                ", tributo=" + getValorTributo() +
                 '}';
     }
 }

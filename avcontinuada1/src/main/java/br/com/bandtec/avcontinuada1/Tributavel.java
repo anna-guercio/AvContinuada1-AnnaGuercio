@@ -6,6 +6,5 @@ public interface Tributavel {
     public Double getValorTributo();
 
     // Justificativa:
-    //
 
 }

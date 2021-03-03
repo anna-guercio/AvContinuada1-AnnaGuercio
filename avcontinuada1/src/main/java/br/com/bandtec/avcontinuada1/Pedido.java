@@ -1,6 +1,6 @@
 package br.com.bandtec.avcontinuada1;
 
-public abstract class Pedido implements Tributavel{
+public abstract class Pedido implements Tributavel {
 
     // Justificativa:
     // Utilizei classe abstrata porque queria que meu projeto tivesse uma relação de herança

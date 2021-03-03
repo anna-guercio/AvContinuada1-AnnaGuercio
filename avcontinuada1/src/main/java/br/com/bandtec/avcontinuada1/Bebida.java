@@ -1,6 +1,6 @@
 package br.com.bandtec.avcontinuada1;
 
-public class Bebida extends Pedido{
+public class Bebida extends Pedido {
 
     // Atributos
     private String tipo; // o tipo pode ser refrigerante, suco, água...
@@ -24,9 +24,9 @@ public class Bebida extends Pedido{
     @Override
     public Double calcularPreco() {
         // Se a quantidade de bebidas for maior ou igual a 3, aplicar um desconto de 15%
-        Double custo = valor*quantidade;
-        if (quantidade >= 3){
-            return (custo)-(custo*0.15);
+        Double custo = valor * quantidade;
+        if (quantidade >= 3) {
+            return (custo) - (custo * 0.15);
         } else {
             return custo;
         }
@@ -47,7 +47,7 @@ public class Bebida extends Pedido{
                 ", tamanho='" + tamanho + '\'' +
                 ", quantidade=" + quantidade +
                 ", preço=" + calcularPreco() +
-                ", tributo="+getValorTributo()+
+                ", tributo=" + getValorTributo() +
                 '}';
     }
 
