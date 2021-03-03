@@ -11,7 +11,6 @@ public class CaixaController {
 
     // Atributos
     private String atendente;
-    //    private Boolean acessos = false;
     private List<Pedido> listaPedidos = new ArrayList<>();
 
 
@@ -63,7 +62,7 @@ public class CaixaController {
     public String deleteLanche(@PathVariable int posicao) {
         if (posicao < listaPedidos.size()) {
             listaPedidos.remove(posicao - 1);
-            return "O item " + posicao + " foi excluído!";
+            return "O pedido " + posicao + " foi excluído!";
         } else {
             return "Erro! Não foi encontrado o pedido selecionado";
         }
